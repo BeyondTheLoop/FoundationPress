@@ -58,6 +58,8 @@ var PATHS = {
     'assets/components/foundation-sites/js/foundation.tabs.js',
     'assets/components/foundation-sites/js/foundation.toggler.js',
     'assets/components/foundation-sites/js/foundation.tooltip.js',
+    'assets/components/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js',
+
 
     // Motion UI
     'assets/components/motion-ui/motion-ui.js',
@@ -165,21 +167,11 @@ gulp.task('javascript', function() {
 
 // Copy task
 gulp.task('copy', function() {
-  // Motion UI
-  var motionUi = gulp.src('assets/components/motion-ui/**/*.*')
-    .pipe($.flatten())
-    .pipe(gulp.dest('assets/javascript/vendor/motion-ui'));
-
-  // What Input
-  var whatInput = gulp.src('assets/components/what-input/**/*.*')
-      .pipe($.flatten())
-      .pipe(gulp.dest('assets/javascript/vendor/what-input'));
-
   // Font Awesome
   var fontAwesome = gulp.src('assets/components/fontawesome/fonts/**/*.*')
       .pipe(gulp.dest('assets/fonts'));
 
-  return merge(motionUi, whatInput, fontAwesome);
+  return merge(fontAwesome);
 });
 
 // Package task
